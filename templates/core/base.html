@@ -1,0 +1,26 @@
+{% load static %} <!-- static dosyalarını kullanabilmesi için load etmek gerek-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title%}Blog App{% endblock title %}</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'core/navbar.html' %} <!-- base html dosyasını olabildiğince sade tutmak için navbarı böyle al -->
+
+    <div class="container">
+        {% block content %}
+        <!-- base html den extend ettiğimiz sayfalarda sadece block contentler arasına yazıklarımız burada gösteriliyor -->
+        {% endblock content %}
+    </div>
+
+    {% include 'core/footer.html' %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

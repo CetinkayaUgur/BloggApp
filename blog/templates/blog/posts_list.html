@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block content%}
+<h1>Postların listesi</h1>
+
+{% for post in posts %}
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{posts.title}}</h5>
+        <p class="card-text">{{posts.description}}</p>
+        <a href="#" class="btn btn-primary">Read More</a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content%}
